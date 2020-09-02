@@ -31,17 +31,22 @@
                 function checkBarang(kodebarang){
                     $.get("<?php echo e(base_url('/barang/checkKodeBarang')); ?>"+'/'+kodebarang,function (data){
                         if(data=='1'){
-                            var url = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl='+kodebarang+'&choe=UTF-8&chld=Q';
-                            var isi = "<ht"+"ml><he"+"ad><scri"+"pt>function step1(){\n" +
-                                "setTimeout('step2()', 10);}\n" +
-                                "function st"+"ep2(){wi"+"ndow.pr"+"int();window.close()}\n" +
-                                "</scri" + "pt></he"+"ad><bo"+"dy onl"+"oad='step1()'>\n" +
-                                "<im"+"g src='" + url + "' /></bo"+"dy></h"+"tml>"
-                            var Pagelink = "about:blank";
-                            var pwa = window.open(Pagelink, "_new");
-                            pwa.document.open();
-                            pwa.document.write(isi);
-                            pwa.document.close();
+                            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                                $('#qrcode').html('<im'+'g src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl='+kodebarang+'&choe=UTF-8&chld=Q">')
+                            }
+                            else{
+                                var url = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl='+kodebarang+'&choe=UTF-8&chld=Q';
+                                var isi = "<ht"+"ml><he"+"ad><scri"+"pt>function step1(){\n" +
+                                    "setTimeout('step2()', 10);}\n" +
+                                    "function st"+"ep2(){wi"+"ndow.pr"+"int();window.close()}\n" +
+                                    "</scri" + "pt></he"+"ad><bo"+"dy onl"+"oad='step1()'>\n" +
+                                    "<im"+"g src='" + url + "' /></bo"+"dy></h"+"tml>"
+                                var Pagelink = "about:blank";
+                                var pwa = window.open(Pagelink, "_new");
+                                pwa.document.open();
+                                pwa.document.write(isi);
+                                pwa.document.close();
+                            }
                         }
                         else{
                             alert('Barang Tidak Ada');
@@ -49,6 +54,9 @@
                     })
                 }
             </script>
+        </div>
+        <div class="col-lg-4 center-block">
+            <div id="qrcode"></div>
         </div>
     </div>
 <?php $__env->stopSection(); ?>
