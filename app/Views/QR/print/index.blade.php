@@ -31,22 +31,19 @@
                 function checkBarang(kodebarang){
                     $.get("{{base_url('/barang/checkKodeBarang')}}"+'/'+kodebarang,function (data){
                         if(data=='1'){
-                            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-                                $('#qrcode').html('<im'+'g src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl='+kodebarang+'&choe=UTF-8&chld=Q">')
-                            }
-                            else{
-                                var url = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl='+kodebarang+'&choe=UTF-8&chld=Q';
-                                var isi = "<ht"+"ml><he"+"ad><scri"+"pt>function step1(){\n" +
-                                    "setTimeout('step2()', 10);}\n" +
-                                    "function st"+"ep2(){wi"+"ndow.pr"+"int();window.close()}\n" +
-                                    "</scri" + "pt></he"+"ad><bo"+"dy onl"+"oad='step1()'>\n" +
-                                    "<im"+"g src='" + url + "' /></bo"+"dy></h"+"tml>"
-                                var Pagelink = "about:blank";
-                                var pwa = window.open(Pagelink, "_new");
-                                pwa.document.open();
-                                pwa.document.write(isi);
-                                pwa.document.close();
-                            }
+                            $('#qrcode').html('<im'+'g src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl='+kodebarang+'&choe=UTF-8&chld=Q">')
+                            $('#Detail').html('<h'+'6>Silahkan Simpan Gambar Tersebut lalu cetak sesuai dengan kebutuhan</'+'h4>')
+                            // var url = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + kodebarang + '&choe=UTF-8&chld=Q';
+                            // var isi = "<ht" + "ml><he" + "ad><scri" + "pt>function step1(){\n" +
+                            //     "setTimeout('step2()', 10);}\n" +
+                            //     "function st" + "ep2(){wi" + "ndow.pr" + "int();window.close()}\n" +
+                            //     "</scri" + "pt></he" + "ad><bo" + "dy onl" + "oad='step1()'>\n" +
+                            //     "<im" + "g src='" + url + "' /></bo" + "dy></h" + "tml>"
+                            // var Pagelink = "about:blank";
+                            // var pwa = window.open(Pagelink, "_new");
+                            // pwa.document.open();
+                            // pwa.document.write(isi);
+                            // pwa.document.close();
                         }
                         else{
                             alert('Barang Tidak Ada');
@@ -57,6 +54,9 @@
         </div>
         <div class="col-lg-4 center-block">
             <div id="qrcode"></div>
+        </div>
+        <div class="col-lg-12 center-block">
+            <div id="Detail"></div>
         </div>
     </div>
 @endsection
