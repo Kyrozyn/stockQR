@@ -47,7 +47,7 @@
                     </li>
                 @endif
                 <li class="nav-item">
-                    <a href="{{base_url('/qr/barangmasuk')}}" class="nav-link">
+                    <a href="{{base_url('/QR/barangmasuk')}}" class="nav-link">
                         <i class="nav-icon fas fa-qrcode"></i>
                         <p>
                             Scan QR Barang Masuk
@@ -55,7 +55,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{base_url('/qr/barangkeluar')}}" class="nav-link">
+                    <a href="{{base_url('/QR/barangkeluar')}}" class="nav-link">
                         <i class="nav-icon fas fa-qrcode"></i>
                         <p>
                             Scan QR Barang Keluar
