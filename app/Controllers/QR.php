@@ -16,4 +16,8 @@ class QR extends BaseController
     public function barangkeluar(){
         return view('QR/barangkeluar/scan');
     }
+
+    public function printQR(){
+        return view('QR/print/index');
+    }
 }

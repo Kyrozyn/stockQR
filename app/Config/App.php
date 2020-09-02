@@ -21,7 +21,7 @@ class App extends BaseConfig
     | environments.
     |
     */
-    public $baseURL = 'https://qrcodebbg.herokuapp.com';
+    public $baseURL = 'http://localhost:8080';
 
     /*
     |--------------------------------------------------------------------------

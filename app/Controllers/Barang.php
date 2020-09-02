@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Libraries\GroceryCrud;
+use App\Models\BarangModel;
 
 class Barang extends BaseController
 {
@@ -28,5 +29,18 @@ class Barang extends BaseController
         $crud->requiredFields(['Kode_Barang','Nama_Barang','Jenis_Barang','Satuan','Merek','Jumlah','Tanggal_Masuk','Tanggal_Keluar']);
         $output = $crud->render();
         return view('render_table', (array)$output);
+    }
+
+    function checkKodeBarang($kodebarang){
+        $barang = new BarangModel();
+        $barang->select();
+        $barang->where('Kode_Barang',$kodebarang);
+        $array = $barang->get();
+        if(empty($array->getRowArray())){
+            echo 0;
+        }
+        else{
+            echo 1;
+        }
     }
 }

@@ -35,6 +35,7 @@ $routes->post('/login','Akun::checkLogin');
 $routes->get('/barang','Barang::index',['filter' => 'loginfilter']);
 $routes->get('/akun','Akun::index',['filter' => 'loginfilter']);
 $routes->get('/stok','Stok::index',['filter' => 'loginfilter']);
+$routes->get('/barang/(:num)','barang/checkKodeBarang/$1',['filter' => 'loginfilter']);
 /**
  * --------------------------------------------------------------------
  * Additional Routing
