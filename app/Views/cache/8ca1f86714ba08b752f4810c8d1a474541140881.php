@@ -20,4 +20,4 @@ foreach($css_files as $file): ?>
     <?php endforeach; ?>
 </body>
 </html>
-<?php /**PATH /var/www/html/project/app/Views/render_table.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\andre\PhpstormProjects\stockQR\app\Views/render_table.blade.php ENDPATH**/ ?>

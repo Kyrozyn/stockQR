@@ -47,4 +47,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="<?php echo e(base_url('assets/dist/js/adminlte.min.js')); ?>"></script>
 </body>
-</html><?php /**PATH /var/www/html/project/app/Views/template/index.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\Users\andre\PhpstormProjects\stockQR\app\Views/template/index.blade.php ENDPATH**/ ?>

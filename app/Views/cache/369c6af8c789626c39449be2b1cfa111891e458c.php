@@ -9,8 +9,8 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
-                <a href="#" class="d-block">{{session()->get('username')}}</a>
-                <a href="#" class="d-block">{{session()->get('jenis_user')}}</a>
+                <a href="#" class="d-block"><?php echo e(session()->get('username')); ?></a>
+                <a href="#" class="d-block"><?php echo e(session()->get('jenis_user')); ?></a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -18,7 +18,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="faslse">
                 <li class="nav-item">
-                    <a href="{{base_url('/barang')}}" class="nav-link">
+                    <a href="<?php echo e(base_url('/barang')); ?>" class="nav-link">
                         <i class="nav-icon fas fa-box"></i>
                         <p>
                             Barang
@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{base_url('/stok')}}" class="nav-link">
+                    <a href="<?php echo e(base_url('/stok')); ?>" class="nav-link">
                         <i class="nav-icon fas fa-boxes"></i>
                         <p>
                             Stok
@@ -36,18 +36,18 @@
                 <?php
                 helper('admin');
                 ?>
-                @if(checkIsAdmin())
+                <?php if(checkIsAdmin()): ?>
                     <li class="nav-item">
-                        <a href="{{base_url('/akun')}}" class="nav-link">
+                        <a href="<?php echo e(base_url('/akun')); ?>" class="nav-link">
                             <i class="nav-icon fas fa-user"></i>
                             <p>
                                 Pengolahan Akun
                             </p>
                         </a>
                     </li>
-                @endif
+                <?php endif; ?>
                 <li class="nav-item">
-                    <a href="{{base_url('/qr/barangmasuk')}}" class="nav-link">
+                    <a href="<?php echo e(base_url('/qr/barangmasuk')); ?>" class="nav-link">
                         <i class="nav-icon fas fa-qrcode"></i>
                         <p>
                             Scan QR Barang Masuk
@@ -55,7 +55,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{base_url('/qr/barangkeluar')}}" class="nav-link">
+                    <a href="<?php echo e(base_url('/qr/barangkeluar')); ?>" class="nav-link">
                         <i class="nav-icon fas fa-qrcode"></i>
                         <p>
                             Scan QR Barang Keluar
@@ -75,4 +75,4 @@
         <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-</aside>
+</aside><?php /**PATH C:\Users\andre\PhpstormProjects\stockQR\app\Views/template/sidebar.blade.php ENDPATH**/ ?>

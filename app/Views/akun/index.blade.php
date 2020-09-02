@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Pengolahan Barang</h1>
+                        <h1 class="m-0 text-dark">Manajemen Akun</h1>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
@@ -17,7 +17,7 @@
         <script src="{{base_url('assets/js/iframeResizer.js')}}"></script>
         <div class="content">
             <div class="container-fluid">
-                    <iframe style="width:100%;height: 100%;border:none;" id="iframeku" src="{{base_url('/barang/barang')}}"></iframe>
+                <iframe style="width:100%;height: 100%;border:none;" id="iframeku" src="{{base_url('/akun/akun')}}"></iframe>
             </div><!-- /.container-fluid -->
         </div>
         <script>
