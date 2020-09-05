@@ -17,6 +17,6 @@
         <div class="col-12 center-block text-center">
             <div id="qr-reader"></div>
         </div>
-        @include('QR/scanjs')
+        @include('QR/barangmasuk/scanjs')
     </div>
 @endsection

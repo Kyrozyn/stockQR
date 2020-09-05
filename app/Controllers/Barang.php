@@ -37,10 +37,10 @@ class Barang extends BaseController
         $barang->where('Kode_Barang',$kodebarang);
         $array = $barang->get();
         if(empty($array->getRowArray())){
-            echo 0;
+            return "0";
         }
         else{
-            echo 1;
+            return "1";
         }
     }
 }

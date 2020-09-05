@@ -7,7 +7,9 @@ use CodeIgniter\Model;
 class StokModel extends Model{
     protected $table = "stoks";
     protected $primaryKey = "Kode_Barang";
-
+    protected $allowedFields = [
+        'Kode_Barang', 'Jumlah'
+    ];
     public function getStokWithName(){
         $db      = \Config\Database::connect();
         $builder = $db->table('stoks');

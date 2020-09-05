@@ -4,5 +4,5 @@
 
     </div>
     <!-- Defasult to the left -->
-    <strong>Copyright &copy; 2020 <a href="https://github.com/kyrozyn">Kyrozyn</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2020 All rights reserved.
 </footer>

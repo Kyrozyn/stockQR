@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Admin</title>
+    <title>PT. Bayu Buana Gemilang</title>
 
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/084c742af7.js" crossorigin="anonymous"></script>

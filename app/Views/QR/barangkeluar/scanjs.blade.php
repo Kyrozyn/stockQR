@@ -25,8 +25,12 @@
                     },
                     qrCodeMessage => {
                         // do something when code is read. For example:
-                        console.log(`QR Code detected: ${qrCodeMessage}`);
-                        alert(`QR Code tersimpan!! ${qrCodeMessage}`);
+                        // console.log(`QR Code detected: ${qrCodeMessage}`);
+                        // alert(`QR Code tersimpan!! ${qrCodeMessage}`);
+                        $.get( "{{base_url('/stok/delStok')}}".concat("/",qrCodeMessage,"/1"), function( data ) {
+                            alert(data);
+                            console.log("masuk : "+data)
+                        });
                         stopQR();
                     },
                     errorMessage => {
