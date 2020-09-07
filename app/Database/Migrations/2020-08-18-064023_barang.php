@@ -27,6 +27,16 @@ class Barang extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 50
             ],
+            'Jumlah_Stok' => [
+                'type' => 'INTEGER',
+                'constraint' => 10
+            ],
+            'Tanggal_Masuk' => [
+                'type' => 'DATE',
+            ],
+            'Tanggal_Keluar' => [
+                'type' => 'DATE',
+            ],
         ]);
         $this->forge->addKey('Kode_Barang', true);
         $this->forge->createTable('barangs');

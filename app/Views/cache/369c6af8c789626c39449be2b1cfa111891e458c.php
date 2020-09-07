@@ -26,10 +26,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo e(base_url('/stok')); ?>" class="nav-link">
+                    <a href="<?php echo e(base_url('/permintaan')); ?>" class="nav-link">
                         <i class="nav-icon fas fa-boxes"></i>
                         <p>
-                            Stok
+                            Permintaan Barang
                         </p>
                     </a>
                 </li>

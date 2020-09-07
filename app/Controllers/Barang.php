@@ -26,7 +26,7 @@ class Barang extends BaseController
             $crud->unsetEdit();
         }
         $crud->uniqueFields(['Kode_Barang']);
-        $crud->requiredFields(['Kode_Barang','Nama_Barang','Jenis_Barang','Satuan','Merek','Jumlah','Tanggal_Masuk','Tanggal_Keluar']);
+        $crud->requiredFields(['Kode_Barang','Nama_Barang','Jenis_Barang','Satuan','Merek','Jumlah_Stok','Tanggal_Masuk']);
         $output = $crud->render();
         return view('render_table', (array)$output);
     }
