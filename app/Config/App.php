@@ -21,7 +21,7 @@ class App extends BaseConfig
     | environments.
     |
     */
-    public $baseURL = 'https://3a969e8ec209.ap.ngrok.io/';
+    public $baseURL = 'https://qrcodebbg.herokuapp.com/';
 
     /*
     |--------------------------------------------------------------------------
