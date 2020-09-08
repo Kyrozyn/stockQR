@@ -16,8 +16,8 @@ class Barang extends Migration
                 'constraint' => 255,
             ],
             'Jenis_Barang' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
+                'type' => 'ENUM',
+                'constraint' => ['Habis Pakai','Alat'],
             ],
             'Satuan' => [
                 'type' => 'VARCHAR',
@@ -36,6 +36,10 @@ class Barang extends Migration
             ],
             'Tanggal_Keluar' => [
                 'type' => 'DATE',
+            ],
+            'Keterangan' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
             ],
         ]);
         $this->forge->addKey('Kode_Barang', true);
