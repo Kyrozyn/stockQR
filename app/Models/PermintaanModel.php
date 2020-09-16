@@ -5,9 +5,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BarangModel extends Model
+class PermintaanModel extends Model
 {
-    protected $table = "barangs";
-    protected $primaryKey = "Kode_Barang";
-    protected $allowedFields = ['Kode_Barang', 'Nama_Barang', 'Jenis_Barang', 'Satuan', 'Merek', 'Jumlah_Stok', 'Tanggal_Masuk', 'Tanggal_Keluar'];
+    protected $table = "permintaans";
+    protected $primaryKey = "ID_Permintaan";
+    protected $allowedFields = ['Tanggal', 'Nama_Barang', 'Jumlah_Barang', 'Nama_Pemohon'];
 }

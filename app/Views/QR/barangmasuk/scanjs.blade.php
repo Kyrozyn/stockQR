@@ -29,6 +29,12 @@
                         // alert(`QR Code tersimpan!! ${qrCodeMessage}`);
                         $.get( "{{base_url('/stok/addStok')}}".concat("/",qrCodeMessage,"/1"), function( data ) {
                             alert(data);
+                            if (data === 'Barang tidak ditemukkan!') {
+                                console.log('barang eweuh')
+                            } else {
+                                console.log('barang aya')
+                                $.get("{{base_url('/laporan/tambah')}}".concat("/",qrCodeMessage,'/1/Masuk'));
+                            }
                             console.log("masuk : "+data)
                         });
                         stopQR();

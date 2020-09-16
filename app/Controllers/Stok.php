@@ -21,31 +21,41 @@ class Stok extends BaseController
 
     function addStok($kodebarang, $jumlah)
     {
-        $stok = new BarangModel();
-        $stokku = $stok->where('Kode_Barang', $kodebarang)
-            ->first();
-        $datadb = $stokku['Jumlah_Stok'];
-        $data = [
-            'Jumlah_Stok' => $datadb + $jumlah
-        ];
-        $stok->update($kodebarang, $data);
-        return "Stok untuk kode barang $kodebarang Berhasil Ditambah!";
+        if($this->checkKodeBarang($kodebarang)){
+            $stok = new BarangModel();
+            $stokku = $stok->where('Kode_Barang', $kodebarang)
+                ->first();
+            $datadb = $stokku['Jumlah_Stok'];
+            $data = [
+                'Jumlah_Stok' => $datadb + $jumlah
+            ];
+            $stok->update($kodebarang, $data);
+            return "Stok untuk kode barang $kodebarang Berhasil Ditambah!";
+        }
+        else{
+            return "Barang tidak ditemukkan!";
+        }
     }
 
     function delStok($kodebarang, $jumlah)
     {
-        $stok = new BarangModel();
-        $stokku = $stok->where('Kode_Barang', $kodebarang)
-            ->first();
-        $datadb = $stokku['Jumlah_Stok'];
-        if ($datadb > 0) {
-            $data = [
-                'Jumlah_Stok' => $datadb - $jumlah
-            ];
-            $stok->update($kodebarang, $data);
-            return "Stok untuk kode barang $kodebarang Berhasil Dikurangi!";
-        } else {
-            return "Barang habis!";
+        if($this->checkKodeBarang($kodebarang)){
+            $stok = new BarangModel();
+            $stokku = $stok->where('Kode_Barang', $kodebarang)
+                ->first();
+            $datadb = $stokku['Jumlah_Stok'];
+            if ($datadb > 0) {
+                $data = [
+                    'Jumlah_Stok' => $datadb - $jumlah
+                ];
+                $stok->update($kodebarang, $data);
+                return "Stok untuk kode barang $kodebarang Berhasil Dikurangi!";
+            } else {
+                return "Barang habis!";
+            }
+        }
+        else{
+            return "Barang tidak ditemukkan!";
         }
     }
 }

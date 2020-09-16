@@ -27,20 +27,15 @@
                         // do something when code is read. For example:
                         // console.log(`QR Code detected: ${qrCodeMessage}`);
                         // alert(`QR Code tersimpan!! ${qrCodeMessage}`);
-                        $.get("{{base_url('/stok/delStok')}}".concat("/", qrCodeMessage, "/1"), function (data) {
+                        $.get( "<?php echo e(base_url('/stok/addStok')); ?>".concat("/",qrCodeMessage,"/1"), function( data ) {
                             alert(data);
                             if (data === 'Barang tidak ditemukkan!') {
                                 console.log('barang eweuh')
                             } else {
                                 console.log('barang aya')
-                                if (data === 'Barang habis!') {
-                                    console.log('barang beak')
-                                } else {
-                                    console.log('barang aya')
-                                    $.get("{{base_url('/laporan/tambah')}}".concat("/",qrCodeMessage,'/1/Keluar'));
-                                }
+                                $.get("<?php echo e(base_url('/laporan/tambah')); ?>".concat("/",qrCodeMessage,'/1/Masuk'));
                             }
-                            console.log("masuk : " + data)
+                            console.log("masuk : "+data)
                         });
                         stopQR();
                     },
@@ -75,7 +70,6 @@
                     // Stop failed, handle it.
                 });
             }
-
             startQR()
         }
     }).catch(err => {
@@ -95,3 +89,4 @@
 <div class="col-12 center-block text-center" style="margin-bottom: 10px">
     <button class="btn btn-primary" onclick="changeCamera()">Ganti Kamera</button>
 </div>
+<?php /**PATH C:\Users\andre\PhpstormProjects\stockQR\app\Views/QR/barangmasuk/scanjs.blade.php ENDPATH**/ ?>
